@@ -1,13 +1,45 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/item/:name">Items</router-link>
-  </div>
+  <nav class="container navbar navbar-expand-lg navbar-light bg-light">
+    <img alt="Vue logo" id="logotrans" src="@/assets/logonv2x.png">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mx-auto">
+            <router-link to="/" class="nav-item nav-link">Home</router-link>
+            <router-link to="/Login" class="nav-item nav-link">Login</router-link>
+            <router-link to="/Careers" class="nav-link">Careers</router-link>
+            <router-link to="/Contact" class="nav-link">Contact</router-link>
+        </div>
+        <div class = "dropdown"> 
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" id="search">Search</button>
+        </form>
+    </div>
+  </nav>
+ </div>
   <router-view/>
 </template>
 
 <style lang="scss">
+$primary: crimson;
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,14 +50,36 @@
 
 #nav {
   padding: 30px;
+  text-align: center;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+#nav a:hover {
+  color: grey;
+  //border-radius: .5rem;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#nav a.router-link-exact-active {
+  color: whitesmoke;
+  background: $primary;
+  border-radius: .5rem;
+}
+
+#search {
+  border-color: $primary;
+  color: $primary;
+}
+#search:hover{
+  color: whitesmoke;
+  background-color: $primary;
+}
+#logotrans{
+    height: auto; 
+    width: auto; 
+    max-width: 75px; 
+    max-height: 75px;
 }
 </style>
