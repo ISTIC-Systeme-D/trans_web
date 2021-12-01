@@ -12,10 +12,11 @@
         <div class="navbar-nav mx-auto">
             <router-link to="/" class="nav-item nav-link">Home</router-link>
             <router-link to="/Login" class="nav-item nav-link">Login</router-link>
-            <router-link to="/Careers" class="nav-link">Careers</router-link>
-            <router-link to="/Contact" class="nav-link">Contact</router-link>
+            <router-link to="/Saisie" class="nav-item nav-link">Nouvelle saisie</router-link>
+            <router-link to="/Liste" class="nav-item nav-link">Liste des entrées</router-link>
+            <router-link to="/Notification" class="nav-item nav-link">Notification</router-link>
         </div>
-        <div class = "dropdown"> 
+        <!--<div class = "dropdown"> 
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dropdown
             </a>
@@ -30,7 +31,8 @@
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit" id="search">Search</button>
-        </form>
+        </form>-->
+        <router-link to="/"><i class="fas fa-sign-out-alt fa-2x"></i></router-link>
     </div>
   </nav>
  </div>
@@ -45,7 +47,7 @@ $primary: crimson;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #557492;
 }
 
 #nav {
