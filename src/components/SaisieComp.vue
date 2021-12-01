@@ -3,21 +3,54 @@
         <h2>{{ msg }}</h2>
         <form>
             <div class="form-group">
-                <label>Email address</label>
-                <input type="email" class="form-control form-control-lg" />
+                <label>Artiste</label>
+                <input type="text" class="form-control form-control-lg" />
             </div>
 
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control form-control-lg" />
+                <label>Pays de l'artiste</label>
+                <input type="text" class="form-control form-control-lg" />
             </div>
 
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
+            <div class="form-group">
+                <label>Lien Spotify</label>
+                <input type="text" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-group">
+                <label>Lien Deezer</label>
+                <input type="text" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-group">
+                <label>Date</label>
+                <input type="date" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-group">
+                <label>Heure</label>
+                <input type="text" class="form-control form-control-lg" />
+            </div>
+
+             <div class="form-group">
+                <label>Salle de concert</label>
+                <input type="text" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-group">
+                <label>Lieu</label>
+                <input type="text" class="form-control form-control-lg" />
+            </div>
+
+            <div class="btn-form">
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Valider</button>
+            </div>
         </form>
     </div>
 </template>
 
 <script>
+
 export default {
   name: 'SaisieComp',
   props: {
@@ -57,5 +90,7 @@ a {
   border-color: #2554FF;
   box-shadow: none;
 }
-
+.btn-form{
+  padding-bottom: 50px;
+}
 </style>

@@ -1,29 +1,32 @@
 <template>
     <div class="vue-template">
         <h2>{{ msg }}</h2>
-        <form>
-            <div class="form-group">
-                <label>Email address</label>
-                <input type="email" class="form-control form-control-lg" />
-            </div>
-
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control form-control-lg" />
-            </div>
-
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
-        </form>
+        <div id="array-rendering">
+          <h3 v-for="item in items" :key="item.id">
+            {{ item.nomA }}  {{ item.paysA }}
+          </h3>
+        </div>
     </div>
 </template>
 
 <script>
+
 export default {
-  name: 'SaisieComp',
+  name: 'ListeComp',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      items: [
+        { nomA: 'Foo', paysA: 'France'  }, 
+        { nomA: 'Bar', paysA: 'Allemagne' }]
+    }
   }
 }
+
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -57,6 +60,9 @@ a {
 .vertical-center .form-control:focus {
   border-color: #2554FF;
   box-shadow: none;
+}
+#array-rendering{
+  color:red;
 }
 
 </style>
