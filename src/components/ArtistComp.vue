@@ -1,5 +1,5 @@
 <template>
-  <div v-if="currentArtist" class="edit-form float-right">
+  <div v-if="currentArtist" class="edit-form float-right" id="test">
     <h4>Artiste</h4>
     <form>
       <div class="form-group">
@@ -44,39 +44,18 @@
       </div>
 
       <div class="form-group">
-        <!-- <label><strong>Status:</strong></label> -->
-        <!-- {{ currentArtist.published ? "Published" : "Pending" }} -->
         {{ message }}
 
       </div>
     </form>
 
-<!--     <button
-      class="badge badge-primary mr-2"
-      @click="updatePublished(false)"
-    >
-      UnPublish
-    </button>
-    <button
-      class="badge badge-primary mr-2"
-      @click="updatePublished(true)"
-    >
-      Publish
-    </button> -->
-
-    <button class="btn btn-danger" @click="deleteArtist">
-      Delete
-    </button>
-
     <button type="submit" class="btn btn-success" @click="updateArtist">
       Update
     </button>
+    <button class="btn btn-danger" @click="deleteArtist">
+      Delete
+    </button>
   </div>
- <!--
-  <div v-else>
-    <br />
-    <h4>Please click on a Ardddtist...</h4>
-  </div>-->
 </template>
 
 <script>
@@ -248,6 +227,12 @@ a {
 .btn{
     margin-top:10px;
     margin-right:5px;
+}
+#test{
+  position:fixed;
+  margin-left:30px;
+  width:20%;
+  margin-right:10%;
 }
 
 </style>
