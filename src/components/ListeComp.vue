@@ -170,13 +170,18 @@ export default {
 <style scoped lang="scss">
 $primary: crimson;
 
+.table {
+  background-color:white;
+  min-width: 40%;
+}
 .list {
   text-align: left;
-  max-width: 750px;
+  max-width: 75%;
   margin: auto;
 }
 .messageAjour{
   margin-left:40px;
+  margin-right:100px;
 }
 .btn-danger{
   margin-bottom: 10px;
