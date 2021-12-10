@@ -5,7 +5,7 @@
       <table class="table table-bordered float-left">
         <thead>
           <tr>
-            <th scope="col-md-5">Name</th>
+            <th scope="col-md-5">Nom</th>
             <th scope="col-md-5">Pays</th>
             <th scope="col-md-5">Date</th>
             <th scope="col-md-5">Salle</th>
@@ -172,17 +172,14 @@ $primary: crimson;
 
 .table {
   background-color:white;
-  min-width: 40%;
+  min-width: 30%;
 }
 .list {
   text-align: left;
-  max-width: 75%;
+  max-width: 90%;
   margin: auto;
 }
-.messageAjour{
-  margin-left:40px;
-  margin-right:100px;
-}
+
 .btn-danger{
   margin-bottom: 10px;
 }
