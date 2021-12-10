@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <LoginComp msg="Sign in here"/>
+    <LoginComp msg="Connectez-vous"/>
   </div>
 </template>
 
