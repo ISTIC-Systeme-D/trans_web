@@ -32,12 +32,56 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit" id="search">Search</button>
         </form>-->
-        <router-link to="/"><i class="fas fa-sign-out-alt fa-2x"></i></router-link>
+        <router-link to="/login"  @click="Logout"><i class="fas fa-sign-out-alt fa-2x"></i></router-link>
     </div>
   </nav>
  </div>
   <router-view/>
 </template>
+
+<!--Il faut être loggé avant de pouvoir aller sur Home et le reste du site-->
+<script>
+import {onBeforeMount, ref} from "vue";
+import { useRouter, useRoute } from 'vue-router';
+import firebase from "./firebase";
+require("firebase/auth");
+export default {
+  setup(){
+    const router = useRouter();
+    const route = useRoute();
+    onBeforeMount(()=> {
+      firebase.app.auth().onAuthStateChanged((user) => {
+        if (!user){
+          router.replace('/login');
+        }else if(route.path == "/login" || route.path =="/register"){
+          router.replace('/');
+        }
+      });
+    });
+    const name = ref("");
+    onBeforeMount(() =>{
+      const user = firebase.app.auth().currentUser;
+      if(user){
+        name.value = user.email.split('@')[0];
+      }
+    });
+    const Logout = ()=>{
+      firebase.app
+          .auth()
+          .signOut()
+          .then(()=>console.log("Signed out"))
+          .catch(err=>alert(err.message));
+    }
+    return {
+      name,
+      Logout
+    }
+
+  },
+
+
+}
+</script>
 
 <style lang="scss">
 $primary: crimson;

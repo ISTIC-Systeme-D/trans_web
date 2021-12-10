@@ -1,7 +1,7 @@
 <template>
   <div class="vue-template">
     <h2>{{ msg }}</h2>
-    <form @submit.prevent="Login">
+    <form @submit.prevent="Register">
       <div class="form-group">
         <label>Email address</label>
         <input type="email" class="form-control form-control-lg" v-model="email"/>
@@ -12,15 +12,7 @@
         <input type="password" class="form-control form-control-lg" v-model="password" />
       </div>
 
-      <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
-
-      <p class="forgot-password text-right mt-2 mb-4">
-        <router-link to="/">Forgot password ?</router-link>
-      </p>
-
-      <p class="forgot-password text-right mt-2 mb-4">
-        Need an account? <router-link to="/register">Register here</router-link>
-      </p>
+      <button type="submit" class="btn btn-dark btn-lg btn-block">Sign Up</button>
 
       <div class="social-icons">
         <ul>
@@ -35,30 +27,32 @@
 </template>
 
 <script>
-//fonction login
+//fonction Register
 import {ref} from 'vue';
 import firebase from "../firebase";
 require("firebase/auth");
-
 export default {
   setup(){
     const email = ref("");
     const password = ref("");
-    const Login = () =>{
+    const Register = () =>{
       firebase.app
           .auth()
-          .signInWithEmailAndPassword(email.value,password.value)
-          .then(data =>console.log(data))
-          .catch(err=>alert(err.message));
+          .createUserWithEmailAndPassword(email.value,password.value)
+          .then(user =>{
+            alert(user);
+          }).catch(err => alert(err.message));
+
+
     }
     return{
-      Login,
+      Register,
       email,
       password
     }
 
   },
-  name: 'LoginComp',
+  name: 'RegisterComp',
   props: {
     msg: String
   }
