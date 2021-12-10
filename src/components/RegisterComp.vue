@@ -40,7 +40,7 @@ export default {
           .auth()
           .createUserWithEmailAndPassword(email.value,password.value)
           .then(user =>{
-            alert(user);
+            console.log(user);
           }).catch(err => alert(err.message));
 
 
