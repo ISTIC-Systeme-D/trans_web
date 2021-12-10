@@ -16,6 +16,7 @@
             <router-link to="/Liste" class="nav-item nav-link">Liste des entrées</router-link>
             <router-link to="/Notification" class="nav-item nav-link">Notification</router-link>
         </div>
+
         <!--<div class = "dropdown"> 
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dropdown
