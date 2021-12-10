@@ -1,6 +1,6 @@
 <template>
   <div class="register">
-    <RegisterComp msg="Sign up here"/>
+    <RegisterComp msg="Créer un compte"/>
   </div>
 </template>
 
