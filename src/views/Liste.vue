@@ -1,17 +1,17 @@
-<template>
+<!--<template>
   <div class="liste">
     <ListeComp msg="Liste des entrées"/>
   </div>
-</template>
+</template>-->
 
 <script>
 // @ is an alias to /src
-import ListeComp from '@/components/ListeComp.vue'
+import TestComp from '@/components/TestComp.vue'
 
 export default {
   name: 'Liste',
   components: {
-    ListeComp
+    TestComp
   }
 }
 </script>
